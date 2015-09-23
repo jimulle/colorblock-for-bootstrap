@@ -1,0 +1,28 @@
+/*
+  1. apply the 'colorblock' class to any container element on the page
+  2. edit the four (4) marked css values below to set your background color and padding values
+  3. sit back and watch the colorblock magic
+*/
+
+.colorblock {
+  background: #e6e6e6;  /* set color for container block */
+  padding-bottom: 20px;   /* set bottom padding */
+  padding-top: 20px;   /* set top padding */
+  position: relative;
+}
+.colorblock:before,
+.colorblock:after {
+  background: #e6e6e6;  /* set color for container block */
+  content: '';
+  display: block;
+  position: absolute;
+  width: 500px;
+  top: 0;
+  bottom: 0
+}
+.colorblock:before {
+  left:-500px;
+}
+.colorblock:after {
+  right:-500px;
+}
