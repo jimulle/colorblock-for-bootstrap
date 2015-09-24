@@ -1,0 +1,29 @@
+// apply this style to a bootstrap container to create an edge to edge background effect without the headaches of container-fluid
+
+// the below mixin creates a colorblock for a unique class selector you provide
+
+.colorblock(@selector: 0, @color: #e6e6e6, @pad: 20px) when not (@selector = 0) {
+		.@{selector}  {
+			background: @color;
+			padding-bottom: @pad;
+			padding-top: @pad;
+			position: relative;
+			&:before, &:after {
+				background: @color;
+				content: '';
+				display: block;
+				position: absolute;
+				width: 500px;
+				top: 0;
+				bottom: 0
+			}
+			&:before {
+				left:-500px;
+			}
+			&:after {
+				right:-500px;
+			}
+		}
+}
+
+// example:  .colorblock(blue,#001fa4,20px);
